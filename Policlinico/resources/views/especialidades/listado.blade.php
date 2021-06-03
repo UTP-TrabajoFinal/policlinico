@@ -2,10 +2,16 @@
 @section('content')
     <h2 class="text-center">Lista de Especialidades</h2>
     <div class="container">
+        @if ($msg = Session::get('mensaje'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <p>{{ $msg }}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <div class="row">
             <div class="col"></div>
             <div class="col-auto">
-                <button class="btn btn-success">Agregar Especialidad</button>
+                <a href="{{ url('/especialidad/create') }}" class="btn btn-success">Agregar Especialidad</a>
             </div>
         </div>
 
@@ -25,15 +31,19 @@
                     <td>{{ $item->NombreEspecialidad}}</td>
                     <td>{{ $item->Descripcion}}</td>
                     <td class="text-center">
-                        <button class="btn btn-secondary">Editar</button>
-                        <button class="btn btn-primary">Ver</button>
+                        <a href="{{ url('especialidad/'.$item->IdEspecialidad.'/edit') }}">
+                            <button class="btn btn-secondary">Editar</button>
+                        </a>
                     </td>
                   </tr>
-
               @endforeach
             </tbody>
           </table>
+
     </div>
-
-
+    <div class="container">
+        <span>
+            {{ $especialidades->links() }}
+         </span>
+    </div>
 @endsection

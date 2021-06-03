@@ -14,7 +14,7 @@ class EspecialidadController extends Controller
      */
     public function index()
     {
-        $especialidades = Especialidad::all();
+        $especialidades = Especialidad::paginate(5);
         return view('especialidades.listado', compact('especialidades'));
     }
 
@@ -25,7 +25,7 @@ class EspecialidadController extends Controller
      */
     public function create()
     {
-        //
+        return view('especialidades.crear');
     }
 
     /**
@@ -36,7 +36,14 @@ class EspecialidadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'NombreEspecialidad' => 'required',
+            'Descripcion' => 'required'
+        ]);
+        $datos = request()->except('_token');
+        Especialidad::create($datos);
+        //return redirect()->route('especialidades.index')
+        return redirect('especialidad')->with('mensaje','Especialidad creada');
     }
 
     /**
@@ -58,7 +65,8 @@ class EspecialidadController extends Controller
      */
     public function edit($id)
     {
-        //
+        $especialidad = Especialidad::findOrFail($id);
+        return view('especialidades.editar',compact('especialidad'));
     }
 
     /**
@@ -70,7 +78,17 @@ class EspecialidadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'NombreEspecialidad' => 'required',
+            'Descripcion' => 'required'
+        ]);
+        $especialidad = Especialidad::findOrFail($id);
+        $datos = request()->except(['_token','_method']);
+        Especialidad::where('IdEspecialidad','=',$id)->update($datos);
+
+        $especialidad = Especialidad::findOrFail($id);
+        return redirect('especialidad')->with('mensaje','Especialidad Modificada');
+        //return view('especialidades.editar',compact('especialidad'));
     }
 
     /**
