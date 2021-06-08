@@ -21,9 +21,7 @@
     <h4>Descripcion</h4>
     <textarea
         class="form-control"
-        rows="3"
-        name="Descripcion">
-{{ isset($especialidad->Descripcion)?$especialidad->Descripcion:''}}
+        name="Descripcion">{{ isset($especialidad->Descripcion)?$especialidad->Descripcion:''}}
     </textarea><br>
     <button type="submit" class="btn btn-success">Guardar</button>
 </div>

@@ -88,7 +88,6 @@ class EspecialidadController extends Controller
 
         $especialidad = Especialidad::findOrFail($id);
         return redirect('especialidad')->with('mensaje','Especialidad Modificada');
-        //return view('especialidades.editar',compact('especialidad'));
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('index')
 @section('content')
     <h2 class="text-center">Lista de Especialidades</h2>
     <div class="container">
@@ -41,9 +41,7 @@
           </table>
 
     </div>
-    <div class="container">
-        <span>
-            {{ $especialidades->links() }}
-         </span>
+    <div class="d-flex justify-content-center">
+        {{ $especialidades->links() }}
     </div>
 @endsection
