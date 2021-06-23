@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EspecialidadController;
+use App\Http\Controllers\TipoUsuarioController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\MedicoController;
+use App\Http\Controllers\AsignacionEspecialidadMedico;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +22,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-
 Route::resource('especialidad', EspecialidadController::class);
+Route::resource('tipousuario', TipoUsuarioController::class);
+Route::resource('usuario', UsuarioController::class);
+Route::resource('medico', MedicoController::class);
+Route::resource('asignacion', AsignacionEspecialidadMedico::class);

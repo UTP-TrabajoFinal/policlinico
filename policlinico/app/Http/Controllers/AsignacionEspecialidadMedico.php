@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Especialidad;
+use App\Models\Medico;
+use App\Models\EspecialidadMedico;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class prueba extends Controller
+class AsignacionEspecialidadMedico extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +17,12 @@ class prueba extends Controller
      */
     public function index()
     {
-        //
+        $asignaciones = DB::table('especialidad_medico')
+            ->join('especialidad', 'especialidad_medico.IdEspecialidad', '=', 'especialidad.IdEspecialidad')
+            ->join('medico', 'especialidad_medico.IdMedico', '=', 'medico.IdMedico')
+            ->select('especialidad_medico.*', 'especialidad.*', 'medico.*')
+            ->paginate();
+        return view('asignacion.listado', compact('asignaciones'));
     }
 
     /**
@@ -23,7 +32,9 @@ class prueba extends Controller
      */
     public function create()
     {
-        //
+        $especialidades = Especialidad::all();
+        $medicos = Medico::all();
+        return view('asignacion.crear', compact(['especialidades', 'medicos']));
     }
 
     /**
@@ -34,7 +45,13 @@ class prueba extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos = $request;
+        $asignacion = new EspecialidadMedico;
+        $asignacion->IdEspecialidad = $datos->idespecialidad;
+        $asignacion->IdMedico = $datos->idmedico;
+        $asignacion->Estado = 1;
+        $asignacion->save();
+        redirect('/asignacion');
     }
 
     /**
@@ -56,7 +73,7 @@ class prueba extends Controller
      */
     public function edit($id)
     {
-        //
+        return $id;
     }
 
     /**
@@ -79,6 +96,6 @@ class prueba extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $id;
     }
 }

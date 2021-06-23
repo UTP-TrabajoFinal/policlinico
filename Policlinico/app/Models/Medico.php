@@ -9,6 +9,6 @@ class Medico extends Model
 {
     use HasFactory;
     protected $primaryKey = 'IdMedico';
-    protected $table = 'especialidades';
-    protected $fillable = ['DNI','Nombres','Apellidos','FechaIngreso','IdUsuario'];
+    protected $table = 'medico';
+    protected $fillable = ['DNI','Nombres','Apellidos','FechaIngreso','URL','IdUsuario'];
 }

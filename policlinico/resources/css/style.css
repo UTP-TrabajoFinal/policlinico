@@ -3,7 +3,9 @@
     --ligth: #ffffff;
     --grey: #efefef;
 }
-
+.alertas{
+    color: red !important;
+}
 body{
     overflow: hidden;
     font-weight: 400;

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class EspecialidadSeeder extends Seeder
 {
@@ -15,10 +16,56 @@ class EspecialidadSeeder extends Seeder
     public function run()
     {
         $especialidades = [
-            ['NombreEspecialidad' => 'Odontologia', 'Descripcion' => 'sin descripcion'],
-            ['NombreEspecialidad' => 'Medicina General', 'Descripcion' => 'sin descripcion'],
-            ['NombreEspecialidad' => 'Traumatologia', 'Descripcion' => 'sin descripcion'],
+            [
+                'NombreEspecialidad' => 'Cardiologia',
+                'Descripcion' => 'sin descripcion',
+                'created_at' => Carbon::now(),
+
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'NombreEspecialidad' => 'Geriatria',
+                'Descripcion' => 'sin descripcion',
+
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'NombreEspecialidad' => 'Medicina General',
+                'Descripcion' => 'sin descripcion',
+
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'NombreEspecialidad' => 'Nutricion',
+                'Descripcion' => 'sin descripcion',
+
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'NombreEspecialidad' => 'Odontologia',
+                'Descripcion' => 'sin descripcion',
+
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'NombreEspecialidad' => 'Psicologia',
+                'Descripcion' => 'sin descripcion',
+
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'NombreEspecialidad' => 'Urologia',
+                'Descripcion' => 'sin descripcion',
+
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ];
-        DB::table('especialidades')->insert($especialidades);
+        DB::table('especialidad')->insert($especialidades);
     }
 }

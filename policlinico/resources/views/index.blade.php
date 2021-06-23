@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,13 +16,34 @@
                 <h4 class="text-light font-weight-bold">Policlinico</h4>
             </div>
             <div class="menu">
-                <a href="{{url('especialidad')}}" class="d-block text-light text-decoration-none p-2"><i class="bi bi-hr m-2 lead"></i>Especialidad</a>
-                <a href="" class="d-block text-light text-decoration-none p-2"><i class="bi bi-person-badge m-2 lead"></i>Medicos</a>
-                <a href="" class="d-block text-light text-decoration-none p-2"><i class="bi bi-person-badge m-2 lead"></i>Asignacion de Especialidades</a>
-                <a href="" class="d-block text-light text-decoration-none p-2"><i class="bi bi-person-badge m-2 lead"></i>Usuarios</a>
-                <a href="" class="d-block text-light text-decoration-none p-2"><i class="bi bi-person-badge m-2 lead"></i>Tipo de Usuarios</a>
-                <a href="" class="d-block text-light text-decoration-none p-2"><i class="bi bi-person-badge m-2 lead"></i>Pacientes</a>
-                <a href="" class="d-block text-light text-decoration-none p-2"><i class="bi bi-person-badge m-2 lead"></i>Cita</a>
+                <a href="{{url('especialidad')}}" class="d-block text-light text-decoration-none p-2">
+                    <i class="bi bi-hr m-2 lead"></i>
+                    Especialidad
+                </a>
+                <a href="{{url('medico')}}" class="d-block text-light text-decoration-none p-2">
+                    <i class="bi bi-person-badge m-2 lead"></i>
+                    Medicos
+                </a>
+                <a href="{{ url('asignacion')}}" class="d-block text-light text-decoration-none p-2">
+                    <i class="bi bi-tags m-2 lead"></i>
+                    Asignacion de Especialidades
+                </a>
+                <a href="{{url('usuario')}}" class="d-block text-light text-decoration-none p-2">
+                    <i class="bi bi-person-badge m-2 lead"></i>
+                    Usuarios
+                </a>
+                <a href="{{url('tipousuario')}}" class="d-block text-light text-decoration-none p-2">
+                    <i class="bi bi-person-badge m-2 lead"></i>
+                    Tipo de Usuarios
+                </a>
+                <a href="" class="d-block text-light text-decoration-none p-2">
+                    <i class="bi bi-person-badge m-2 lead"></i>
+                    Pacientes
+                </a>
+                <a href="" class="d-block text-light text-decoration-none p-2">
+                    <i class="bi bi-person-badge m-2 lead"></i>
+                    Cita
+                </a>
             </div>
         </div>
         <div class="w-100">

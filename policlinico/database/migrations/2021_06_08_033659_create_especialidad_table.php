@@ -17,6 +17,7 @@ class CreateEspecialidadTable extends Migration
             $table->increments('IdEspecialidad');
             $table->string('NombreEspecialidad', 100);
             $table->string('Descripcion', 100);
+            $table->string('foto')->default('/storage/especialidades/default.png');
             $table->timestamps();
         });
     }
