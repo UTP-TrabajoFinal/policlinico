@@ -47,8 +47,34 @@
             </div>
         </div>
         <div class="w-100">
-            <br>
             <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        </ul>
+                        <div class="d-flex">
+
+                            <div class="dropdown">
+                                <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ Session::get('usuarioLogueado') }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Cerrar Sesion
+                                        </a>
+                                    </li>
+                                </ul>
+                              </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="container">
+
                 @yield('content')
             </div>
         </div>

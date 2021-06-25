@@ -31,10 +31,9 @@
             @endforeach
         @else
             @foreach ($tipousuario as $item)
-                <option value="{{$item->IdTipoUsuario }}">{{$item->TipoUsuario}}</option>
+                <option value="{{$item->IdTipoUsuario }}">{{$item->IdTipoUsuario.' - '.$item->TipoUsuario}}</option>
             @endforeach
         @endif
-
     </select>
     <br>
     <button type="submit" class="btn btn-success">

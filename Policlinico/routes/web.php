@@ -6,6 +6,7 @@ use App\Http\Controllers\TipoUsuarioController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\AsignacionEspecialidadMedico;
+use App\Http\Controllers\LogueoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,7 @@ use App\Http\Controllers\AsignacionEspecialidadMedico;
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('login');
 });
 
 Route::resource('especialidad', EspecialidadController::class);
@@ -27,3 +28,4 @@ Route::resource('tipousuario', TipoUsuarioController::class);
 Route::resource('usuario', UsuarioController::class);
 Route::resource('medico', MedicoController::class);
 Route::resource('asignacion', AsignacionEspecialidadMedico::class);
+Route::resource('login', LogueoController::class);

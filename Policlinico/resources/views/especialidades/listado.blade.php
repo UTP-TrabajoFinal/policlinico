@@ -37,7 +37,7 @@
                     <td class="text-center">{{ $item->Descripcion}}</td>
                     <td class="text-center">{{ $item->created_at->diffForHumans() }}</td>
                     <td class="text-center">
-                        <img width="100px" src="{{'../public'.$item->URL}}" alt="">
+                        <img width="100px" src="{{'../public'.$item->foto}}" alt="">
                     </td>
                     <td class="text-center">
                         <a href="{{ url('especialidad/'.$item->IdEspecialidad.'/edit') }}">
