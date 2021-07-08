@@ -18,50 +18,22 @@ class EspecialidadSeeder extends Seeder
         $especialidades = [
             [
                 'NombreEspecialidad' => 'Cardiologia',
-                'Descripcion' => 'sin descripcion',
-                'created_at' => Carbon::now(),
-
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'NombreEspecialidad' => 'Geriatria',
-                'Descripcion' => 'sin descripcion',
-
+                'Descripcion' => 'Enfermedades cardiovasculares',
+                'foto' => '/storage/especialidades/cardiologia.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'NombreEspecialidad' => 'Medicina General',
-                'Descripcion' => 'sin descripcion',
-
+                'Descripcion' => 'La consulta está orientada al abordaje integral del paciente en su aspecto físico, mental y social',
+                'foto' => '/storage/especialidades/medicina_general.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'NombreEspecialidad' => 'Nutricion',
-                'Descripcion' => 'sin descripcion',
-
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'NombreEspecialidad' => 'Odontologia',
-                'Descripcion' => 'sin descripcion',
-
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'NombreEspecialidad' => 'Psicologia',
-                'Descripcion' => 'sin descripcion',
-
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ],
-            [
-                'NombreEspecialidad' => 'Urologia',
-                'Descripcion' => 'sin descripcion',
-
+                'Descripcion' => 'Es la especialidad que busca mejorar la calidad de vida de las personas a través de tratamientos dietoterapéuticos y educación alimentaria nutricional',
+                'foto' => '/storage/especialidades/nutricion.png',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],

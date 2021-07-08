@@ -19,8 +19,7 @@ class CreateMedicoTable extends Migration
             $table->string('Nombres');
             $table->string('Apellidos');
             $table->date('FechaIngreso');
-            $table->string('URL');
-
+            $table->string('URL')->default('/storage/medicos/default.png');;
             $table->unsignedInteger('IdUsuario');
             $table->foreign('IdUsuario')->references('IdUsuario')->on('usuario');
 

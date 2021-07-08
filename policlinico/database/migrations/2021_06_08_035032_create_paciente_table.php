@@ -15,13 +15,13 @@ class CreatePacienteTable extends Migration
     {
         Schema::create('paciente', function (Blueprint $table) {
             $table->increments('IdPaciente');
-            $table->integer('DNI');
-            $table->string('Nombres');
-            $table->string('Apellidos');
-            $table->string('Direccion');
-            $table->boolean('Sexo');
-            $table->bigInteger('Telefono');
-            $table->string('URL');
+            $table->integer('DNI')->unique()->nullable();
+            $table->string('Nombres')->nullable()->nullable();
+            $table->string('Apellidos')->nullable();
+            $table->string('Direccion')->nullable();
+            $table->boolean('Sexo')->nullable();
+            $table->bigInteger('Telefono')->nullable();
+            $table->string('URL')->default('/storage/pacientes/default.png');
             $table->unsignedInteger('IdUsuario');
 
             $table->foreign('IdUsuario')->references('IdUsuario')->on('usuario');

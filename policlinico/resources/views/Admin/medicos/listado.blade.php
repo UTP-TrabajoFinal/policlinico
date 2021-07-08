@@ -38,11 +38,11 @@
                     <td class="text-center">{{ $item->Apellidos}}</td>
                     <td class="text-center">{{ $item->FechaIngreso }}</td>
                     <td class="text-center">
-                        <img width="100px" src="{{'../public'.$item->URL}}" alt="">
+                        <img width="100px" src="{{asset($item->URL)}}" alt="">
                     </td>
                     <td class="text-center">{{ $item->updated_at->diffForHumans() }}</td>
                     <td class="text-center">
-                        <a href="{{ url('especialidad/'.$item->IdEspecialidad.'/edit') }}">
+                        <a href="{{ url('medico/'.$item->IdMedico.'/edit') }}">
                             <button class="btn btn-secondary">
                                 <i class="bi bi-pencil-fill"></i>
                                 Editar

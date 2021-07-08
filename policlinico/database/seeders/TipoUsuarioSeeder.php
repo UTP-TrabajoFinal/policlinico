@@ -16,10 +16,10 @@ class TipoUsuarioSeeder extends Seeder
     public function run()
     {
         $tipo_usuario = [
-            ['TipoUsuario' => 'Medico','created_at' => Carbon::now(),'updated_at' => Carbon::now()],
-            ['TipoUsuario' => 'Paciente','created_at' => Carbon::now(),'updated_at' => Carbon::now()],
-            ['TipoUsuario' => 'Admin','created_at' => Carbon::now(),'updated_at' => Carbon::now()],
-            ['TipoUsuario' => 'User','created_at' => Carbon::now(),'updated_at' => Carbon::now()],
+            ['TipoUsuario' => 'Admin', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['TipoUsuario' => 'User', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['TipoUsuario' => 'Medico', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['TipoUsuario' => 'Paciente', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
         ];
         DB::table('tipo_usuario')->insert($tipo_usuario);
     }

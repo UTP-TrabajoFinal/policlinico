@@ -7,23 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
-    <title>Policlinico - LogIn</title>
+    <title>Document</title>
 </head>
 <body>
     <div class="modal-dialog">
         <div class="container">
-            <div class="modal-content" id="contenedor">
-                <div class="col-12 text-center user-img">
-                    <img width="150px" src="<?php echo asset("storage/user.png")?>" alt="">
-                </div>
-
-                @if ($msg = Session::get('mensaje'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <p>{{ $msg }}</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-                <form class="col-12" method="POST" action="{{ route('admin.index')}}">
+            <div class="modal-content">
+                <h3 class="text-center">Nuevo Registro</h3>
+                <form class="col-12" method="POST" action="{{ route('registro.store')}}">
                     @csrf
                     <div class="form-group">
                         <h4>Usuario</h4>
@@ -34,8 +25,7 @@
                         <br>
                     </div>
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary btn-lg" id="boton1">Ingresar</button>
-                        <a href="{{url('registro')}}"  class="btn btn-danger btn-lg" id="boton2">Registrar</a>
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
                     </div>
                 </form>
             </div>

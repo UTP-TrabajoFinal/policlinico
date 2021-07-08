@@ -43,10 +43,15 @@ class MedicoController extends Controller
 
     public function edit($id)
     {
+        $usuarios = Usuario::all();
+        $medicos = Medico::find($id);
+
+        return view('medicos.editar',compact(['usuarios','medicos']));
     }
 
     public function update(Request $request, $id)
     {
+
     }
 
     public function destroy($id)

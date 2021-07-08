@@ -10,13 +10,13 @@
         class="form-control"
         placeholder="Ingrese Categoria"
         name="NombreEspecialidad"
-        value="{{ isset($especialidad->NombreEspecialidad)?$especialidad->NombreEspecialidad:'' }}">
+        value="{{ isset($especialidad)?$especialidad->NombreEspecialidad:'' }}">
         {!! $errors->first('NombreEspecialidad','<span class=alertas>:message</span>')!!}
 
     <h4>Descripcion</h4>
     <textarea
         class="form-control"
-        name="Descripcion">{{isset($especialidad->Descripcion)?$especialidad->Descripcion:''}}</textarea>
+        name="Descripcion">{{isset($especialidad)?$especialidad->Descripcion:''}}</textarea>
         {!! $errors->first('Descripcion','<span class=alertas>:message</span>')!!}
 
     <h4>Foto</h4><br>
