@@ -23,15 +23,22 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $usuario = new Usuario();
-        $usuario->Usuario = $request->user;
-        $usuario->Password = Crypt::encrypt($request->pass);
+        $usuario->Usuario = $request->DNI;
+        $usuario->Password = Crypt::encrypt($request->Password);
         $usuario->IdTipoUsuario = 4;
         $usuario->save();
 
         $paciente = new Paciente();
-        $paciente->IdUsuario = $usuario->IdUsuario;
+        $paciente->DNI = $request->DNI;
+        $paciente->Nombres = $request->Nombres;
+        $paciente->Apellidos = $request->Apellidos;
+        $paciente->Direccion = $request->Direccion;
+        $paciente->Sexo = $request->Sexo;
+        $paciente->Telefono = $request->Telefono;
+        $paciente->IdUsuario  = $usuario->IdUsuario;
         $paciente->save();
         return redirect('/')->with('mensaje', 'Usuario Creado');
+
     }
 
     public function show($id)

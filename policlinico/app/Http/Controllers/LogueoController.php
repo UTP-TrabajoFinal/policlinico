@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medico;
+use App\Models\Paciente;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -43,7 +44,8 @@ class LogueoController extends Controller
                         return view('medico.index',compact('medico'));
                         break;
                     case 4:
-                        return view('paciente.index');
+                        $paciente = Paciente::where('IdUsuario','=',$usuario->IdUsuario)->first();
+                        return view('paciente.index',compact('paciente'));
                         break;
                 }
             } else {

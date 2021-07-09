@@ -33,7 +33,7 @@ class PacienteController extends Controller
     public function edit($id)
     {
         $paciente = Paciente::where('IdUsuario', '=', Usuario::find($id)->IdUsuario)->first();
-        return view('paciente.usuario.editar', compact('paciente'));
+        return view('paciente.perfil.editar', compact('paciente'));
     }
 
     public function update(Request $request, $id)

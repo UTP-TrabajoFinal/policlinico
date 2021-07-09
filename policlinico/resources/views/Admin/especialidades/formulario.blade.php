@@ -1,4 +1,4 @@
-<a href="{{ url('/especialidad') }}" class="btn btn-outline-danger">
+<a href="{{ url('/Admin/especialidad') }}" class="btn btn-outline-danger">
     <i class="bi bi-arrow-bar-left"></i>
     Volver
 </a>

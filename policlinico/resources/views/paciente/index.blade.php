@@ -19,21 +19,21 @@
                 <div class="d-flex align-items-start" id="sub-menu">
                     <i class="bi bi-file-person-fill p-2" id="icono"></i>
                     <h3>
-                        <a href="{{route('registro.edit',Session::get('IdusuarioLogueado'))}}" class="d-block text-decoration-none" id="item">Datos Personales</a>
+                        <a href="{{url('perfil/'.Session::get('IdusuarioLogueado').'/edit')}}" class="d-block text-decoration-none" id="item">Datos Personales</a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
                     <i class="bi bi-file-earmark-person p-2" id="icono"></i>
                     <h3>
-                        <a href="" class="d-block text-decoration-none" id="item">Usuario</a>
+                        <a href="{{url('usuario/'.Session::get('IdusuarioLogueado').'/edit')}}" class="d-block text-decoration-none" id="item">Usuario</a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
                     <i class="bi bi-file-medical-fill p-2" id="icono"></i>
                     <h3>
-                        <a href="" class="d-block text-decoration-none" id="item">Cita Medica</a>
+                        <a href="{{url('cita/'.Session::get('IdusuarioLogueado'))}}" class="d-block text-decoration-none" id="item">Cita Medica</a>
                     </h3>
                 </div>
 
@@ -49,7 +49,7 @@
                     <h2>
                         Bienvenido:
                         <b>
-                            {{ Session::get('usuarioLogueado') }}
+                            {{ $paciente->Nombres.' '.$paciente->Apellidos}}
                         </b>
                     </h2>
                     <h2>

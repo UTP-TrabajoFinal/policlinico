@@ -19,7 +19,7 @@ class CreatePacienteTable extends Migration
             $table->string('Nombres')->nullable()->nullable();
             $table->string('Apellidos')->nullable();
             $table->string('Direccion')->nullable();
-            $table->boolean('Sexo')->nullable();
+            $table->boolean('Sexo')->nullable();//Hombre=0, Mujer=1
             $table->bigInteger('Telefono')->nullable();
             $table->string('URL')->default('/storage/pacientes/default.png');
             $table->unsignedInteger('IdUsuario');

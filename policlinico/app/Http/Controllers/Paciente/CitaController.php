@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Paciente;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EspecialidadController extends Controller
+class CitaController extends Controller
 {
     public function index()
     {
-        return "controller";
+
     }
 
     public function create()
@@ -23,7 +24,7 @@ class EspecialidadController extends Controller
 
     public function show($id)
     {
-        //
+        return $id;
     }
 
     public function edit($id)
