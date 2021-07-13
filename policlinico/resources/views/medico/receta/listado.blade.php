@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-1"></div>
                 <div class="col-8">
-                    <form action="{{url('Medico/Receta/Medicamento/1')}}" method="POST">
+                    <form action="{{url('Medico/Receta/Medicamento/'.$diagnostico->IdDiagnostico)}}" method="POST">
                         @csrf
                         <h1 class="display-6 text-center">
                             Lista de Medicamentos
@@ -58,7 +58,11 @@
                                 <p class="fs-4">Cantidad de días</p>
                             </div>
                             <div class="col align-self-center">
-                                <input type="text" class="form-control" name="cantidad">
+                                <select class="form-select" aria-label=".form-select-sm example" name="cantidad">
+                                    @for ($i = 1; $i < 30; $i++)
+                                        <option value="{{$i}}">{{$i}}</option>
+                                    @endfor
+                                </select>
                             </div>
                         </div>
 

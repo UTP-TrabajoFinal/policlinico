@@ -25,7 +25,7 @@ class UsuarioController extends Controller
         $usuario = new Usuario();
         $usuario->Usuario = $request->DNI;
         $usuario->Password = Crypt::encrypt($request->Password);
-        $usuario->IdTipoUsuario = 4;
+        $usuario->IdTipoUsuario = 3;
         $usuario->save();
 
         $paciente = new Paciente();
