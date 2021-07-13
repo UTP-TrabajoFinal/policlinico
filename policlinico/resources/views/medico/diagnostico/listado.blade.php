@@ -9,10 +9,12 @@
         </div>
         <div class="col-8"></div>
         <div class="col-2">
-            <a href="{{url('Medico/Receta/'.$diagnostico->IdDiagnostico)}}" class="btn btn-outline-primary btn-lg mt-3">
-                Receta
-                <i class="fas fa-chevron-right"></i>
-            </a>
+            @if ($diagnostico!=null)
+                <a href="{{url('Medico/Receta/'.$diagnostico->IdDiagnostico)}}" class="btn btn-outline-primary btn-lg mt-3">
+                    Receta
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            @endif
         </div>
     </div>
 
