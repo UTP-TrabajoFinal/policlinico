@@ -21,7 +21,7 @@ class MedicoSeeder extends Seeder
                 'Nombres' => 'Pedro',
                 'Apellidos' => 'Perez del Solar',
                 'FechaIngreso' => now(),
-                'IdUsuario' => 3
+                'IdUsuario' => '4'
             ],
         ];
         DB::table('medico')->insert($medicos);

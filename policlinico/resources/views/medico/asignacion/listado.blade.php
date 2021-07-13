@@ -1,9 +1,10 @@
 @extends('medico.index')
 @section('content')
-    <br>
-    <div class="row pb-5">
-        <div class="col text-center">
-            <h1>Lista de Asignacion de Especialidades</h1>
+    <div class="row">
+        <div class="col">
+            <h1 class="display-4 text-center">
+                Asignación de Especialidades
+            </h1>
         </div>
     </div>
 
@@ -16,7 +17,7 @@
 
     <div class="row">
         <div class="col">
-            <table class="table border">
+            <table class="table">
                 <thead>
                     <tr class="text-center align-middle">
                         <th style="width: 25%">

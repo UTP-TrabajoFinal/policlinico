@@ -18,45 +18,65 @@
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-file-person-fill p-2" id="icono"></i>
-                    <h3>
-                        <a href="{{url('Medico/Registro/'.$medico->IdMedico.'/edit')}}" class="d-block text-decoration-none" id="item">
+                    <i class="fas fa-id-card p-2 align-self-center" id="icono"></i>
+                    <h3 >
+                        <a href="{{url('Medico/Registro/'.$medico->IdMedico.'/edit')}}" class="d-block text-decoration-none mb-2" id="item">
                             Datos Personales
                         </a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-file-earmark-person p-2" id="icono"></i>
+                    <i class="fas fa-user-md p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{ url('Medico/Usuario/'.session()->get('IdusuarioLogueado').'/edit ') }}" class="d-block text-decoration-none" id="item">
-                        Usuario
+                        <a href="{{ url('Medico/Usuario/'.session()->get('IdusuarioLogueado').'/edit ') }}" class="d-block text-decoration-none px-3" id="item">
+                            Usuario
                         </a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-file-medical-fill p-2" id="icono"></i>
+                    <i class="far fa-clipboard p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{url('Medico/Asignacion')}}" class="d-block text-decoration-none" id="item">
-                            Asignacion de Especialidades
+                        <a href="{{ url('Medico/Usuario/'.session()->get('IdusuarioLogueado').'/edit ') }}" class="d-block text-decoration-none px-4 mb-2" id="item">
+                            Ficha Laboral
                         </a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-file-medical-fill p-2" id="icono"></i>
+                    <i class="fas fa-user-graduate p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{url('Medico/Cita')}}" class="d-block text-decoration-none" id="item">
+                        <a href="{{ url('Medico/Ficha/Grado') }}" class="d-block text-decoration-none px-4 mb-2" id="item">
+                            Ficha Grados
+                        </a>
+                    </h3>
+                </div>
+
+                <div class="d-flex align-items-start" id="sub-menu">
+                    <i class="fas fa-user-tag p-2 align-self-center" id="icono"></i>
+                    <h3>
+                        <a href="{{url('Medico/Asignacion')}}" class="d-block text-decoration-none px-1" id="item">
+                            Especialidades
+                        </a>
+                    </h3>
+                </div>
+
+                <div class="d-flex align-items-start" id="sub-menu">
+                    <i class="far fa-calendar-check p-2 align-self-center" id="icono"></i>
+                    <h3>
+                        <a href="{{url('Medico/Cita')}}" class="d-block text-decoration-none px-3 mb-2" id="item">
                             Citas Programadas
                         </a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-box-arrow-left p-2" id="icono"></i>
+                    <i class="fas fa-door-open p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{route('admin.show','0')}}" class="d-block text-decoration-none" id="item">Cerrar Sesion</a>
+                        <a href="{{route('admin.show','0')}}" class="d-block text-decoration-none mb-2 px-1" id="item">
+                            Cerrar Sesion
+                        </a>
                     </h3>
                 </div>
             </div>

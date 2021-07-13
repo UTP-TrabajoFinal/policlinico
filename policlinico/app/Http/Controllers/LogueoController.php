@@ -37,13 +37,13 @@ class LogueoController extends Controller
                     case 1:
                         return view('admin.index');
                         break;
-                    case 3:
+                    case 2:
                         $request->session()->put(['IdmedicoLogueado' => $medico->IdMedico]);
                         $medico = Medico::where('IdUsuario','=',$usuario->IdUsuario)->first();
                         $request->session()->forget('mensaje');
                         return view('medico.index',compact('medico'));
                         break;
-                    case 4:
+                    case 3:
                         $paciente = Paciente::where('IdUsuario','=',$usuario->IdUsuario)->first();
                         return view('paciente.index',compact('paciente'));
                         break;

@@ -14,9 +14,10 @@ class CreateTipoUsuarioTable extends Migration
     public function up()
     {
         Schema::create('tipo_usuario', function (Blueprint $table) {
-            $table->increments('IdTipoUsuario');
+            $table->integer('IdTipoUsuario')->unsigned();
             $table->string('TipoUsuario');
             $table->timestamps();
+            $table->primary('IdTipoUsuario');
         });;
     }
 

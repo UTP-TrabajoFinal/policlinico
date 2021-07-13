@@ -23,7 +23,16 @@ class PacienteSeeder extends Seeder
                 'Sexo' => '1',
                 'Telefono' => '123456',
                 'IdUsuario' => '2',
-            ]
+            ],
+            [
+                'DNI' => '07408073',
+                'Nombres' => 'edith',
+                'Apellidos' => 'acuña farro',
+                'Direccion' => 'casa de edith',
+                'Sexo' => '1',
+                'Telefono' => '123456',
+                'IdUsuario' => '2',
+            ],
         ];
         DB::table('paciente')->insert($pacientes);
     }

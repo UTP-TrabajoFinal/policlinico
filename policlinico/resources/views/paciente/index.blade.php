@@ -18,30 +18,34 @@
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-file-person-fill p-2" id="icono"></i>
+                    <i class="fas fa-id-card p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{url('perfil/'.Session::get('IdusuarioLogueado').'/edit')}}" class="d-block text-decoration-none" id="item">Datos Personales</a>
+                        <a href="{{url('perfil/'.Session::get('IdusuarioLogueado').'/edit')}}" class="d-block text-decoration-none px-2 mb-2" id="item">
+                            Datos Personales
+                        </a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-file-earmark-person p-2" id="icono"></i>
+                    <i class="fas fa-user-injured p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{url('usuario/'.Session::get('IdusuarioLogueado').'/edit')}}" class="d-block text-decoration-none" id="item">Usuario</a>
+                        <a href="{{url('usuario/'.Session::get('IdusuarioLogueado').'/edit')}}" class="d-block text-decoration-none px-3 mb-2" id="item">Usuario</a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-file-medical-fill p-2" id="icono"></i>
+                    <i class="far fa-calendar-check p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{url('paciente/cita/'.Session::get('IdusuarioLogueado'))}}" class="d-block text-decoration-none" id="item">Cita Medica</a>
+                        <a href="{{url('paciente/cita/'.Session::get('IdusuarioLogueado'))}}" class="d-block text-decoration-none mb-2 px-3" id="item">Cita Medica</a>
                     </h3>
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
-                    <i class="bi bi-box-arrow-left p-2" id="icono"></i>
+                    <i class="fas fa-door-open p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{route('admin.show','0')}}" class="d-block text-decoration-none" id="item">Cerrar Sesion</a>
+                        <a href="{{route('admin.show','0')}}" class="d-block text-decoration-none mb-2 px-1" id="item">
+                            Cerrar Sesión
+                        </a>
                     </h3>
                 </div>
             </div>
@@ -50,7 +54,7 @@
                     <div class="col-6">
                         <h2>
                             Bienvenido:
-                            <b>
+                            <b class="text-uppercase">
                                 {{ $paciente->Nombres.' '.$paciente->Apellidos}}
                             </b>
                         </h2>
@@ -59,7 +63,7 @@
                     <div class="col-3">
                         <h2>
                             Rol:
-                            <b>
+                            <b class="text-uppercase">
                                 Paciente
                             </b>
                         </h2>

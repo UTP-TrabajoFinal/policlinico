@@ -14,6 +14,7 @@ class CreateRecetaTable extends Migration
     public function up()
     {
         Schema::create('receta', function (Blueprint $table) {
+            $table->increments('IdReceta');
             $table->unsignedInteger('IdCita');
             $table->foreign('IdCita')->references('IdCita')->on('cita');
             $table->unsignedInteger('IdMedicamento');

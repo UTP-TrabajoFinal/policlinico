@@ -15,6 +15,7 @@ class UsuarioSeeder extends Seeder
      */
     public function run()
     {
+        //1=Admin 2=Medico 3=paciente
         $usuarios = [
             [
                 'Usuario' => 'admin',
@@ -26,14 +27,21 @@ class UsuarioSeeder extends Seeder
             [
                 'Usuario' => '71789326',
                 'Password' => 'eyJpdiI6IkExRWlGZFkybHRyeWkxY2h3VUtKaGc9PSIsInZhbHVlIjoidUkvQmNwT3lpTTdLRkdUZy9SU3orUT09IiwibWFjIjoiOWNmZDQ2NjJlODMyYzczZWUzZTUyMTg5OGY4MTRhOGY3NzUzOTBhODQwYzk2MzNiMzRjNmEyNWIwMzVmNGRhZSJ9',
-                'IdTipoUsuario' => '4',//Paciente
+                'IdTipoUsuario' => '3',//Paciente
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'Usuario' => '07408073',
+                'Password' => 'eyJpdiI6IkExRWlGZFkybHRyeWkxY2h3VUtKaGc9PSIsInZhbHVlIjoidUkvQmNwT3lpTTdLRkdUZy9SU3orUT09IiwibWFjIjoiOWNmZDQ2NjJlODMyYzczZWUzZTUyMTg5OGY4MTRhOGY3NzUzOTBhODQwYzk2MzNiMzRjNmEyNWIwMzVmNGRhZSJ9',
+                'IdTipoUsuario' => '3',//Paciente
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'Usuario' => 'user2',
                 'Password' => 'eyJpdiI6IkExRWlGZFkybHRyeWkxY2h3VUtKaGc9PSIsInZhbHVlIjoidUkvQmNwT3lpTTdLRkdUZy9SU3orUT09IiwibWFjIjoiOWNmZDQ2NjJlODMyYzczZWUzZTUyMTg5OGY4MTRhOGY3NzUzOTBhODQwYzk2MzNiMzRjNmEyNWIwMzVmNGRhZSJ9',
-                'IdTipoUsuario' => '3',//Medico
+                'IdTipoUsuario' => '2',//Medico
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
