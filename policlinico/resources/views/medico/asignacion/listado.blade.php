@@ -18,34 +18,28 @@
         <div class="col">
             <table class="table border">
                 <thead>
-                    <tr class="text-center">
-                        <th>
+                    <tr class="text-center align-middle">
+                        <th style="width: 25%">
                             <h4>
-                                <strong>
-                                Especialidad
-                                </strong>
+                                <b>Especialidad</b>
                             </h4>
                         </th>
-                        <th>
+                        <th style="width: 25%">
                             <h4>
-                                <strong>
-                                Horario
-                                </strong>
+                                <b>Horario</b>
                             </h4>
                         </th>
-                        <th>
+                        <th style="width: 25%">
                             <h4>
-                                <strong>
-                                Estado
-                                </strong>
+                                <b>Estado</b>
                             </h4>
                         </th>
-                        <th></th>
+                        <th style="width: 25%"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($asignaciones as $item)
-                    <tr class="text-center">
+                    <tr class="text-center align-middle">
                         <td>
                             <h4>
                                 {{$item->NombreEspecialidad}}
@@ -76,12 +70,12 @@
                                 </h4>
                             </td>
                         @endif
-                        <td>
-                            <a class="btn btn-primary" href="">
+                        <td class="border">
+                            <a class="btn btn-primary" href="{{url('Medico/Asignacion/'.$item->IdEspecialidadMedico.'/edit')}}">
                                 <i class="bi bi-pencil-square"></i>
                                 Editar
                             </a>
-                            <a class="btn btn-danger">
+                            <a class="btn btn-danger" href="{{route('medico.asignacion.destroy',$item->IdEspecialidadMedico)}}">
                                 @if ($item->Estado==0)
                                     Activar
                                 @else

@@ -31,9 +31,10 @@ class AsignacionController extends Controller
                 'especialidad.NombreEspecialidad',
                 'medico.IdMedico',
                 'medico.Nombres',
-                'medico.Apellidos')
+                'medico.Apellidos'
+            )
             ->get();
-        return view('medico.asignacion.listado', compact('asignaciones','medico'));
+        return view('medico.asignacion.listado', compact('asignaciones', 'medico'));
     }
 
     public function create()
@@ -41,32 +42,56 @@ class AsignacionController extends Controller
         $id = Session::get('IdmedicoLogueado');
         $medico = Medico::find($id);
         $especialidades = Especialidad::all();
-        return view('medico.asignacion.create',compact('especialidades','medico'));
+        return view('medico.asignacion.create', compact('especialidades', 'medico'));
     }
 
     public function store(Request $request)
     {
-
-        return $request;
+        $asignacion = new EspecialidadMedico();
+        $asignacion->IdEspecialidad = $request->idespecialidad;
+        $asignacion->IdMedico = Session::get('IdmedicoLogueado');;
+        $asignacion->HoraInicio = $request->inicio;
+        $asignacion->HoraFin = $request->fin;
+        $asignacion->Estado = 1;
+        $asignacion->save();
+        return redirect()->route('medico.asignacion.index');
     }
 
     public function show($id)
     {
-        //
+        $asignacion = EspecialidadMedico::find($id);
+        if ($asignacion->Estado == 1) {
+            $asignacion->Estado = 0;
+        } else {
+            $asignacion->Estado = 1;
+        }
+        $asignacion->save();
+        return redirect()->route('medico.asignacion.index');
     }
 
-    public function edit($id)
+    public function edit($idasignacion)
     {
-        //
+        $id = Session::get('IdmedicoLogueado');
+        $medico = Medico::find($id);
+        $especialidades = Especialidad::all();
+        $asignacion = EspecialidadMedico::find($idasignacion);
+        return view('medico.asignacion.edit', compact('especialidades', 'medico', 'asignacion'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $asignacion = EspecialidadMedico::find($id);
+        $asignacion->IdEspecialidad = $request->idespecialidad;
+        $asignacion->IdMedico = Session::get('IdmedicoLogueado');;
+        $asignacion->HoraInicio = $request->inicio;
+        $asignacion->HoraFin = $request->fin;
+        $asignacion->Estado = 1;
+        $asignacion->save();
+        return redirect()->route('medico.asignacion.index');
     }
 
     public function destroy($id)
     {
-        //
+
     }
 }

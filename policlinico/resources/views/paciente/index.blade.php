@@ -6,6 +6,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
         <title>Policlinico</title>
     </head>
     <body>
@@ -33,7 +34,7 @@
                 <div class="d-flex align-items-start" id="sub-menu">
                     <i class="bi bi-file-medical-fill p-2" id="icono"></i>
                     <h3>
-                        <a href="{{url('cita/'.Session::get('IdusuarioLogueado'))}}" class="d-block text-decoration-none" id="item">Cita Medica</a>
+                        <a href="{{url('paciente/cita/'.Session::get('IdusuarioLogueado'))}}" class="d-block text-decoration-none" id="item">Cita Medica</a>
                     </h3>
                 </div>
 
@@ -46,18 +47,23 @@
             </div>
             <div class="align-self-start" id="menu-derecho">
                 <div class="row">
-                    <h2>
-                        Bienvenido:
-                        <b>
-                            {{ $paciente->Nombres.' '.$paciente->Apellidos}}
-                        </b>
-                    </h2>
-                    <h2>
-                        Rol:
-                        <b>
-                            Paciente
-                        </b>
-                    </h2>
+                    <div class="col-6">
+                        <h2>
+                            Bienvenido:
+                            <b>
+                                {{ $paciente->Nombres.' '.$paciente->Apellidos}}
+                            </b>
+                        </h2>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col-3">
+                        <h2>
+                            Rol:
+                            <b>
+                                Paciente
+                            </b>
+                        </h2>
+                    </div>
                 </div>
                 <div class="container">
                     @yield('content')

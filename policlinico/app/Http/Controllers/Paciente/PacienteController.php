@@ -12,7 +12,9 @@ class PacienteController extends Controller
 {
     public function index()
     {
-        //
+        $id = session()->get('IdusuarioLogueado');
+        $paciente = Paciente::Where('IdUsuario','=',$id)->first();
+        return view('paciente.index',compact('paciente'));
     }
 
     public function create()
@@ -43,8 +45,12 @@ class PacienteController extends Controller
         if ($request->hasFile('foto')) {
             $foto = $request->file('foto')->store('public/pacientes');
             $url = Storage::url($foto);
-            $temp = str_replace('storage', 'public', $paciente->URL);
-            Storage::delete($temp);
+
+            if (strpos($paciente->URL, 'default.png') === false) {
+                $temp = str_replace('storage', 'public', $paciente->URL);
+                Storage::delete($temp);
+            }
+
 
             Paciente::where('IdPaciente', '=', $id)->update([
                 'DNI' => $datos['dni'],
@@ -65,9 +71,7 @@ class PacienteController extends Controller
                 'Telefono' => $datos['telefono']
             ]);
         }
-        $paciente = Paciente::find($id);
-        $request->session()->put(['mensaje' => 'Paciente Actualizado Correctamente!.']);
-        return view('paciente.usuario.editar',compact('paciente'));
+        return redirect()->route('paciente.perfil.index');
     }
 
     public function destroy($id)

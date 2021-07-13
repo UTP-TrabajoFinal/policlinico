@@ -35,7 +35,7 @@
                     </div>
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-primary btn-lg" id="boton1">Ingresar</button>
-                        <a href="{{url('registro')}}"  class="btn btn-danger btn-lg" id="boton2">Registrar</a>
+                        <a href="{{route('paciente.usuario.index')}}"  class="btn btn-danger btn-lg" id="boton2">Registrar</a>
                     </div>
                 </form>
             </div>

@@ -24,7 +24,7 @@ class UsuarioSeeder extends Seeder
                 'updated_at' => Carbon::now()
             ],
             [
-                'Usuario' => 'user1',
+                'Usuario' => '71789326',
                 'Password' => 'eyJpdiI6IkExRWlGZFkybHRyeWkxY2h3VUtKaGc9PSIsInZhbHVlIjoidUkvQmNwT3lpTTdLRkdUZy9SU3orUT09IiwibWFjIjoiOWNmZDQ2NjJlODMyYzczZWUzZTUyMTg5OGY4MTRhOGY3NzUzOTBhODQwYzk2MzNiMzRjNmEyNWIwMzVmNGRhZSJ9',
                 'IdTipoUsuario' => '4',//Paciente
                 'created_at' => Carbon::now(),

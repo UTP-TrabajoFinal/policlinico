@@ -20,7 +20,9 @@ class CreateCitaTable extends Migration
             $table->unsignedInteger('IdEspecialidadMedico');
             $table->foreign('IdEspecialidadMedico')->references('IdEspecialidadMedico')->on('especialidad_medico');
             $table->date('FechaCita');
-            $table->time('HoraCita', $precision = 0);
+            $table->time('HoraInicio');
+            $table->time('HoraFin');
+            $table->boolean('Estado');
             $table->timestamps();
         });
     }

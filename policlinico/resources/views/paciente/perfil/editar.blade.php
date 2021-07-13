@@ -3,7 +3,7 @@
     <br>
     <div class="row">
         <div class="col-3">
-            <a href="{{ url('/') }}" class="btn btn-outline-danger btn-lg">
+            <a href="{{ route('paciente.perfil.index') }}" class="btn btn-outline-danger btn-lg">
                 <i class="bi bi-arrow-bar-left"></i>
                 Volver
             </a>
@@ -41,13 +41,13 @@
                     <input type="text" class="form-control" value="{{$paciente->Direccion}}" name="direccion">
 
                     <h4>Sexo</h4>
-                    <select name="sexo" id="" class="form-control">
+                    <select name="sexo" class="form-control">
                         @if ($paciente->Sexo==1)
-                            <option value="0" selected>Masculino</option>
-                            <option value="1">Femenino</option>
-                        @else
                             <option value="0">Masculino</option>
                             <option value="1" selected>Femenino</option>
+                        @else
+                            <option value="0" selected>Masculino</option>
+                            <option value="1">Femenino</option>
                         @endif
                     </select>
 

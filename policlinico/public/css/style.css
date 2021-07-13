@@ -8,7 +8,6 @@
 }
 body{
     font-weight: 400;
-    overflow: hidden;
 }
 #logo h3{
     color: #F2F2F2;
@@ -21,13 +20,11 @@ a:hover{
     background-color: var(--primary) !important;
     padding-left: 15px;
 }
-#menu{
-    min-height: 100vh;
-    background:#F2F2F2;
-}
+
 #menu-izquierdo{
     background: #024873;
     min-width: 15vw;
+    position: sticky;
 }
 
 #menu-izquierdo h3{
@@ -40,6 +37,7 @@ a:hover{
     min-width: 84vw;
     padding-left: 5em;
     padding-top: 2em;
+
 }
 
 #sub-menu:hover{

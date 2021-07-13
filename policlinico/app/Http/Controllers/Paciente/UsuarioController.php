@@ -38,7 +38,6 @@ class UsuarioController extends Controller
         $paciente->IdUsuario  = $usuario->IdUsuario;
         $paciente->save();
         return redirect('/')->with('mensaje', 'Usuario Creado');
-
     }
 
     public function show($id)
@@ -47,12 +46,20 @@ class UsuarioController extends Controller
 
     public function edit($id)
     {
-
+        $usuario = Usuario::Where('IdUsuario','=',$id)->first();
+        $paciente = Paciente::Where('IdUsuario','=',$usuario->IdUsuario)->first();
+        return view('paciente.usuario.editar',compact('usuario','paciente'));
     }
 
     public function update(Request $request, $id)
     {
-
+        Usuario::Where('IdUsuario','=',$id)->update([
+            'Usuario' => $request->usuario,
+            'Password' => Crypt::encrypt($request->password),
+        ]);
+        $usuario = Usuario::Where('IdUsuario','=',$id)->first();
+        $paciente = Paciente::Where('IdUsuario','=',$usuario->IdUsuario)->first();
+        return view('paciente.index',compact('paciente'));
     }
 
     public function destroy($id)

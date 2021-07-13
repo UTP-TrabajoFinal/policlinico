@@ -14,10 +14,10 @@ class CreateDiagnosticoTable extends Migration
     public function up()
     {
         Schema::create('diagnostico', function (Blueprint $table) {
-            $table->increments('IdDiagnostico');
+            $table->integer('IdDiagnostico')->unsigned();
+            $table->primary('IdDiagnostico');
             $table->string('Diagnostico');
-            $table->unsignedInteger('IdCita');
-            $table->foreign('IdCita')->references('IdCita')->on('cita');
+            $table->foreign('IdDiagnostico')->references('IdCita')->on('cita');
             $table->timestamps();
         });
     }

@@ -21,10 +21,10 @@
             </a>
 
 
-            <form class="col-12 pt-2" method="POST" action="{{ route('registro.store')}}">
+            <form class="col-12 pt-2" method="POST" action="{{ route('paciente.usuario.store')}}">
             @csrf
                 <div class="row">
-                    <div class="col-2 mb-2">
+                    <div class="col-3 mb-2">
                         <h4>DNI</h4>
                     </div>
                     <div class="col-4 mb-2">
@@ -33,31 +33,31 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-2 mb-2">
+                    <div class="col-3 mb-2">
                         <h4>Nombres</h4>
                     </div>
-                    <div class="col-4 mb-2">
+                    <div class="col-3 mb-2">
                         <input type="text" class="form-control" name="Nombres">
                     </div>
-                    <div class="col-2 mb-2">
+                    <div class="col-3 mb-2">
                         <h4>Apellidos</h4>
                     </div>
-                    <div class="col-4 mb-2">
+                    <div class="col-3 mb-2">
                         <input type="text" class="form-control" name="Apellidos">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-2 mb-2 mt-3">
+                    <div class="col-3 mb-2 mt-3" >
                         <h4>Direccion</h4>
                     </div>
-                    <div class="col-10 mb-2">
-                        <textarea name="" rows="2" class="form-control" name="Direccion"></textarea>
+                    <div class="col-9 mb-2">
+                        <textarea rows="2" class="form-control" name="Direccion" style="resize: none;"></textarea>
                     </div>
                 </div>
 
                 <div class="row mb-2">
-                    <div class="col-2">
+                    <div class="col-3">
                         <h4>Telefono</h4>
                     </div>
                     <div class="col-4">
@@ -76,16 +76,24 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-2 mb-2">
+                    <div class="col-3 mb-2">
                         <h4>Password</h4>
                     </div>
                     <div class="col mb-2">
                         <input type="password" class="form-control" name="Password">
                     </div>
                 </div>
-            <button type="submit" class="btn btn-primary btn-lg">
+                <div class="row">
+                    <div class="col-3 mb-2">
+                        <h4>Confirmacion Password</h4>
+                    </div>
+                    <div class="col mb-2">
+                        <input type="password" class="form-control" name="RePassword">
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-success btn-lg">
                 <i class="fas fa-save"></i>
-                Guardar
+                Registrar
             </button>
             </form>
         </div>
