@@ -21,7 +21,11 @@ Route::resource('Medico/Asignacion', App\Http\Controllers\Medico\AsignacionContr
 Route::resource('Medico/Cita', App\Http\Controllers\Medico\CitaController::class)->names('medico.cita');
 Route::get('paciente/cita/paciente/{id}',[App\Http\Controllers\Medico\CitaController::class,'paciente']);
 Route::get('Medico/Diagnostico/{id}', [App\Http\Controllers\Medico\Diagnosticocontroller::class,'index']);
+Route::post('Medico/Diagnostico/Guardar/{id}', [App\Http\Controllers\Medico\Diagnosticocontroller::class,'guardar']);
 Route::resource('Medico/Ficha/Grado', App\Http\Controllers\Medico\FichaEstudiosController::class)->names('medico.fichagrado');
+Route::resource('Medico/Ficha/Experiencia', App\Http\Controllers\Medico\FichaExperienciaController::class)->names('medico.fichaexperiencia');
+Route::get('Medico/Receta/{id}', [App\Http\Controllers\Medico\RecetaController::class,'index']);
+Route::post('Medico/Receta/Medicamento/{id}', [App\Http\Controllers\Medico\RecetaController::class,'store']);
 
 //paciente
 Route::resource('perfil', App\Http\Controllers\Paciente\PacienteController::class)->names('paciente.perfil');

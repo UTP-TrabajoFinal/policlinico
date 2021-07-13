@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Medico;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cita;
+use App\Models\Diagnostico;
 use App\Models\Medico;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -38,7 +40,25 @@ class Diagnosticocontroller extends Controller
             ->orderBy('cita.FechaCita','asc')
             ->limit(1)
             ->get();
-        //return $cita;
-        return view('medico.diagnostico.listado',compact('medico','cita'));
+        $diagnostico = Diagnostico::find($cita[0]->IdCita);
+        return view('medico.diagnostico.listado',compact('medico','cita','diagnostico'));
+    }
+
+    public function guardar(Request $request, $idcita)
+    {
+        $diagnostico = Diagnostico::find($idcita);
+        if ($diagnostico == null) {
+            $diagnostico = new Diagnostico();
+        }
+        $diagnostico->IdDiagnostico = $idcita;
+        $diagnostico->Diagnostico = $request->diagnostico;
+        $diagnostico->save();
+
+        $cita = Cita::find($idcita);
+        $cita->Estado = 0;
+        $cita->save();
+
+        Session::flash('message', "Diagnostico Guardado Correctamente!");
+        return back();
     }
 }

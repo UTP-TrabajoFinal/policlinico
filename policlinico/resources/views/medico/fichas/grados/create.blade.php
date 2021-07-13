@@ -1,5 +1,9 @@
 @extends('medico.index')
 @section('content')
+    <a href="{{url('Medico/Ficha/Grado')}}" class="btn btn-outline-danger btn-lg mt-3">
+        <i class="fas fa-chevron-left"></i>
+        Regresar
+    </a>
     <h1 class="display-4 text-center mt-3 mb-3">
         Añadir Grado Profesional
     </h1>

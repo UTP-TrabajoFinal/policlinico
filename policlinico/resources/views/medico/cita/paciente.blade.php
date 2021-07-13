@@ -1,15 +1,15 @@
 @extends('medico.index')
 @section('content')
-    <br>
+    <a href="{{url('Medico/Cita')}}" class="btn btn-outline-danger btn-lg mt-3">
+        <i class="fas fa-chevron-left"></i>
+        Regresar
+    </a>
     <div class="row">
         <div class="col">
             <h1 class="display-4 text-center text-uppercase">
                 Ficha del Paciente
             </h1>
-            <a href="{{url('Medico/Cita')}}" class="btn btn-outline-danger btn-lg">
-                <i class="fas fa-chevron-left"></i>
-                Regresar
-            </a>
+
             <div class="row mt-4">
                 <div class="col-8">
                     <h1 class="display-6">Datos Personales</h1>
@@ -38,7 +38,7 @@
                                     </b>
                                 @else
                                     <b class="text-uppercase">
-                                        Femenina
+                                        Femenino
                                     </b>
                                 @endif
                             </p>

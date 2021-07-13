@@ -1,29 +1,16 @@
 @extends('medico.index')
 @section('content')
-    <a href="{{url('Medico/Ficha/Grado')}}" class="btn btn-outline-danger btn-lg mt-3">
+    <a href="{{url('Medico/Ficha/Experiencia')}}" class="btn btn-outline-danger btn-lg mt-3">
         <i class="fas fa-chevron-left"></i>
         Regresar
     </a>
-    <h1 class="display-4 text-center mt-3 mb-3">
-        Editar Grado Profesional
+    <h1 class="display-4 text-center mb-3">
+        Editar Experiencia Laboral
     </h1>
-    <form action="{{URL('Medico/Ficha/Grado/'.$ficha->IdFichaEstudios)}}" method="POST">
+    <form action="{{URL('Medico/Ficha/Experiencia/'.$ficha->IdFichaExperiencia)}}" method="POST">
         @csrf
         @method('PATCH')
         <div class="form-group">
-            <div class="row mb-2">
-                <div class="col-3">
-                    <h4>
-                        Nombre del Grado
-                    </h4>
-                </div>
-                <div class="col-6">
-                    <h4>
-                        <input type="text" class="form-control" name="grado" value="{{$ficha->Grado}}">
-                    </h4>
-                </div>
-            </div>
-
             <div class="row mb-2">
                 <div class="col-3">
                     <h4>
@@ -33,6 +20,19 @@
                 <div class="col-6">
                     <h4>
                         <input type="text" class="form-control" name="institucion" value="{{$ficha->Institucion}}">
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-3">
+                    <h4>
+                        Nombre del Cargo
+                    </h4>
+                </div>
+                <div class="col-6">
+                    <h4>
+                        <input type="text" class="form-control" name="cargo" value="{{$ficha->Cargo}}">
                     </h4>
                 </div>
             </div>

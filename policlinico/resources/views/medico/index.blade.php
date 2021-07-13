@@ -14,7 +14,7 @@
             <div class="p-2 bd-highlight" id="menu-izquierdo">
                 <div class="text-center">
                     <h3>Policlinico</h3>
-                    <img src="{{asset('storage\logo.png')}}" alt="" width="150px" class="text-center">
+                    <img src="{{asset('storage\logo.png')}}" alt="" width="300px" class="text-center">
                 </div>
 
                 <div class="d-flex align-items-start" id="sub-menu">
@@ -38,7 +38,7 @@
                 <div class="d-flex align-items-start" id="sub-menu">
                     <i class="far fa-clipboard p-2 align-self-center" id="icono"></i>
                     <h3>
-                        <a href="{{ url('Medico/Usuario/'.session()->get('IdusuarioLogueado').'/edit ') }}" class="d-block text-decoration-none px-4 mb-2" id="item">
+                        <a href="{{ url('Medico/Ficha/Experiencia/')}}" class="d-block text-decoration-none px-4 mb-2" id="item">
                             Ficha Laboral
                         </a>
                     </h3>
