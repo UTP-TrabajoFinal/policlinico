@@ -13,7 +13,7 @@
         <div class="p-2 bd-highlight" id="menu-izquierdo">
             <div class="text-center" id="logo">
                 <h3>Policlinico</h3>
-                <img src="{{asset('storage\logo.png')}}" alt="" width="3000px" class="text-center">
+                <img src="{{asset('storage\logo.png')}}" alt="" width="300px" class="text-center">
             </div>
 
             <div class="d-flex align-items-start" id="sub-menu">

@@ -23,15 +23,18 @@ class RecetaController extends Controller
         $medicamentos = Medicamento::all();
         $frecuencias = Frecuencia::all();
         $receta = DB::table('receta')
-            ->join('medico','receta.IdMedicamento','=','receta.IdMedicamento')
+            ->join('medicamento','receta.IdMedicamento','=','medicamento.IdMedicamento')
             ->join('frecuencia','receta.IdFrecuencia','=','frecuencia.IdFrecuencia')
             ->select(
-                'especialidad_medico.IdEspecialidadMedico',
+                'medicamento.NombreMedicamento',
+                'medicamento.Presentacion',
+                'frecuencia.NombreFrecuencia',
+                'receta.CantidadDias',
             )
-            ->where('receta.IdReceta','=',$id)
+            ->where('receta.IdCita','=',$id)
             ->get();
 
-        return view('medico.receta.listado',compact('cita','medico','diagnostico','medicamentos','frecuencias'));
+        return view('medico.receta.listado',compact('cita','medico','diagnostico','medicamentos','frecuencias','receta'));
     }
 
     public function create()

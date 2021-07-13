@@ -84,11 +84,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td scope="row"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            @foreach ($receta as $item)
+                                <tr>
+                                    <td>{{$item->NombreMedicamento.' - '.$item->Presentacion}}</td>
+                                    <td>{{$item->NombreFrecuencia}}</td>
+                                    <td>{{$item->CantidadDias}}</td>
+                                    <td>
+                                        <a href="" class="btn btn-danger">
+                                            Eliminar
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
