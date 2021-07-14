@@ -90,7 +90,7 @@
                                     <td>{{$item->NombreFrecuencia}}</td>
                                     <td>{{$item->CantidadDias}}</td>
                                     <td>
-                                        <a href="" class="btn btn-danger">
+                                        <a href="{{url('Medico/Receta/Medicamento/Eliminar/'.$item->IdReceta)}}" class="btn btn-danger">
                                             Eliminar
                                         </a>
                                     </td>

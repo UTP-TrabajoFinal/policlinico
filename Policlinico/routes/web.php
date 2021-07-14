@@ -14,6 +14,7 @@ Route::resource('admin', LogueoController::class);
 //Admin
 Route::resource('Admin/especialidad', App\Http\Controllers\Admin\EspecialidadController::class);
 Route::get('Admin/Dashboard', [App\Http\Controllers\Admin\DashboardController::class,'index']);
+Route::get('Admin/Dashboard/CitasRegistradas', [App\Http\Controllers\Admin\DashboardController::class,'citasRegistradas']);
 
 //medico
 Route::resource('Medico/Registro', App\Http\Controllers\Medico\medicoController::class);
@@ -27,6 +28,7 @@ Route::resource('Medico/Ficha/Grado', App\Http\Controllers\Medico\FichaEstudiosC
 Route::resource('Medico/Ficha/Experiencia', App\Http\Controllers\Medico\FichaExperienciaController::class)->names('medico.fichaexperiencia');
 Route::get('Medico/Receta/{id}', [App\Http\Controllers\Medico\RecetaController::class,'index']);
 Route::post('Medico/Receta/Medicamento/{id}', [App\Http\Controllers\Medico\RecetaController::class,'store']);
+Route::get('Medico/Receta/Medicamento/Eliminar/{id}', [App\Http\Controllers\Medico\RecetaController::class,'eliminar']);
 
 //paciente
 Route::resource('perfil', App\Http\Controllers\Paciente\PacienteController::class)->names('paciente.perfil');

@@ -26,6 +26,7 @@ class RecetaController extends Controller
             ->join('medicamento','receta.IdMedicamento','=','medicamento.IdMedicamento')
             ->join('frecuencia','receta.IdFrecuencia','=','frecuencia.IdFrecuencia')
             ->select(
+                'receta.IdReceta',
                 'medicamento.NombreMedicamento',
                 'medicamento.Presentacion',
                 'frecuencia.NombreFrecuencia',
@@ -35,11 +36,6 @@ class RecetaController extends Controller
             ->get();
 
         return view('medico.receta.listado',compact('cita','medico','diagnostico','medicamentos','frecuencias','receta'));
-    }
-
-    public function create()
-    {
-
     }
 
     public function store(Request $request,$id)
@@ -54,23 +50,11 @@ class RecetaController extends Controller
         return redirect('Medico/Receta/'.$id);
     }
 
-    public function show($id)
+    public function eliminar($id)
     {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        $receta = Receta::find($id);
+        $id = $receta->IdCita;
+        $receta->delete();
+        return redirect('Medico/Receta/'.$id);
     }
 }

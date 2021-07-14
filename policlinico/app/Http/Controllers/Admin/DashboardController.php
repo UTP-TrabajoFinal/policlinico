@@ -14,10 +14,15 @@ class DashboardController extends Controller
 
     public function citasRegistradas(){
         $citas = DB::table('cita')
-            ->join('contacts', 'users.id', '=', 'contacts.user_id')
-            ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->select('users.*', 'contacts.phone', 'orders.price')
+            ->join('especialidad_medico', 'cita.IdEspecialidadMedico', '=', 'especialidad_medico.IdEspecialidadMedico')
+            ->join('medico', 'medico.IdMedico', '=', 'especialidad_medico.IdMedico')
+            ->select('cita.*', 'especialidad_medico.*', 'medico.*')
             ->get();
-        return view('Admin.dashboard.listado');
+
+        $citas = DB::select("select especialidad.NombreEspecialidad, count(especialidad.NombreEspecialidad) as 'Cantidad 'FROM cita
+        inner join especialidad_medico ON cita.IdEspecialidadMedico = especialidad_medico.IdEspecialidadMedico
+        inner join especialidad ON especialidad_medico.IdEspecialidad = especialidad.IdEspecialidad
+        GROUP by especialidad.NombreEspecialidad");
+        return view('Admin.dashboard.citasXespecialidad',compact('citas'));
     }
 }
