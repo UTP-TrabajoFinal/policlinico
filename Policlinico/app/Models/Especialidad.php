@@ -10,5 +10,5 @@ class Especialidad extends Model
     use HasFactory;
     protected $primaryKey = 'IdEspecialidad';
     protected $table = 'especialidad';
-    protected $fillable = ['IdEspecialidad','NombreEspecialidad','Descripcion','Foto'];
+    protected $fillable = ['IdEspecialidad','NombreEspecialidad','Foto'];
 }

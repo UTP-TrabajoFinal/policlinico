@@ -15,6 +15,7 @@ Route::resource('admin', LogueoController::class);
 Route::resource('Admin/especialidad', App\Http\Controllers\Admin\EspecialidadController::class);
 Route::get('Admin/Dashboard', [App\Http\Controllers\Admin\DashboardController::class,'index']);
 Route::get('Admin/Dashboard/CitasRegistradas', [App\Http\Controllers\Admin\DashboardController::class,'citasRegistradas']);
+Route::resource('Admin/Medico', App\Http\Controllers\Admin\MedicoController::class)->names('admin.medico');
 
 //medico
 Route::resource('Medico/Registro', App\Http\Controllers\Medico\medicoController::class);

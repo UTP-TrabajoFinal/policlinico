@@ -1,6 +1,6 @@
-@extends('index')
+@extends('Admin.index')
 @section('content')
-    <h2 class="text-center">Lista de Medicos</h2>
+    <h2 class="display-3 text-center">Lista de Medicos</h2>
     <div class="container">
         @if ($msg = Session::get('mensaje'))
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col"></div>
             <div class="col-auto">
-                <a href="{{ url('/medico/create') }}" class="btn btn-success">
+                <a href="{{ url('Admin/Medico/create') }}" class="btn btn-success btn-lg">
                     <i class="bi bi-plus-lg"></i>
                     Agregar Medico
                 </a>
@@ -21,29 +21,34 @@
         <table class="table">
             <thead>
               <tr>
-                <th class="text-center">DNI</th>
-                <th class="text-center">Nombres</th>
-                <th class="text-center">Apellidos</th>
-                <th class="text-center">F. Ingreso</th>
-                <th class="text-center">Foto</th>
-                <th class="text-center">F. Modificacion</th>
-                <th class="text-center">Opcion</th>
+                <th class="display-6 text-center">DNI</th>
+                <th class="display-6 text-center">Medico</th>
+                <th class="display-6 text-center">F. Ingreso</th>
+                <th class="display-6 text-center">Foto</th>
+                <th class="display-6 text-center">Opcion</th>
               </tr>
             </thead>
             <tbody>
                 @foreach ($medicos as $item)
-                <tr>
-                    <th class="text-center">{{ $item->DNI}}</th>
-                    <td class="text-center">{{ $item->Nombres}}</td>
-                    <td class="text-center">{{ $item->Apellidos}}</td>
-                    <td class="text-center">{{ $item->FechaIngreso }}</td>
-                    <td class="text-center">
-                        <img width="100px" src="{{asset($item->URL)}}" alt="">
+                <tr class="align-middle">
+                    <th class="display-6 text-muted text-center">
+                        {{ $item->DNI}}
+                    </th>
+                    <td class="display-6 text-muted text-center">
+                        {{ 'Dr(a) '.$item->Nombres.' '.$item->Apellidos}}
                     </td>
-                    <td class="text-center">{{ $item->updated_at->diffForHumans() }}</td>
+                    <td class="display-6 text-muted text-center">
+                        {{ date("j-n-Y", strtotime($item->FechaIngreso)) }}
+                    </td>
+                    <td class="display-6 text-muted text-center">
+                        <figure class="figure">
+                            <img src="{{asset($item->URL)}}" class="img-thumbnail" width="150em">
+                        </figure>
+                    </td>
+
                     <td class="text-center">
                         <a href="{{ url('medico/'.$item->IdMedico.'/edit') }}">
-                            <button class="btn btn-secondary">
+                            <button class="btn btn-secondary btn-lg">
                                 <i class="bi bi-pencil-fill"></i>
                                 Editar
                             </button>

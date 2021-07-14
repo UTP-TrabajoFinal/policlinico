@@ -73,3 +73,18 @@ a:hover{
     min-height: 100vh;
 }
 
+.page-item.active .page-link{
+    size: 2em !important;
+    background-color: #024873 !important;
+    border-color: #024873 !important;
+    color: #D7D7D9;
+}
+
+.pagination{
+    font-size: 2em;
+}
+
+.page-link{
+    color: #024873;
+}
+
