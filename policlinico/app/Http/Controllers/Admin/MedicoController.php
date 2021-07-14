@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Medico;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class MedicoController extends Controller
@@ -24,6 +25,13 @@ class MedicoController extends Controller
     public function store(Request $request)
     {
         $datos = $request;
+
+        $usuario = new Usuario;
+        $usuario->Usuario = $datos->DNI;
+        $usuario->Password = $datos->DNI;
+        $usuario->IdTipoUsuario = 2;
+        $usuario->save();
+
         $medico = new Medico();
         $medico->DNI = $datos->DNI;
         $medico->Nombres = $datos->Nombres;
@@ -31,9 +39,11 @@ class MedicoController extends Controller
         $medico->FechaIngreso = $datos->fecha;
         $foto = $datos->file('foto')->store('public/medicos');
         $medico->URL = Storage::url($foto);
-        $medico->IdUsuario = $datos->idusuario;
+        $medico->IdUsuario = $usuario->IdUsuario;
         $medico->save();
-        return redirect('medicos')->with('mensaje', 'Medico Registrado');
+
+        Session::flash('mensaje', 'Medico creado!.');
+        return redirect('Admin/Medico');
     }
 
     public function edit($id)

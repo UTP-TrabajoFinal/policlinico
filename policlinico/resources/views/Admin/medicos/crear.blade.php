@@ -7,7 +7,7 @@
         </a>
     </div>
     <h1 class="display-6 text-center">Nuevo Medico</h1>
-    <form action="{{ url('/medico')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url('/Admin/Medico')}}" method="POST" enctype="multipart/form-data">
         @csrf
         @include('Admin.medicos.formulario')
     </form>
