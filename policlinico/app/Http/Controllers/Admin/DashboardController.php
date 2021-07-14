@@ -19,10 +19,11 @@ class DashboardController extends Controller
             ->select('cita.*', 'especialidad_medico.*', 'medico.*')
             ->get();
 
-        $citas = DB::select("select especialidad.NombreEspecialidad, count(especialidad.NombreEspecialidad) as 'Cantidad 'FROM cita
+        $citas = DB::select("select especialidad.NombreEspecialidad, count(especialidad.NombreEspecialidad) as 'Cantidad' FROM cita
         inner join especialidad_medico ON cita.IdEspecialidadMedico = especialidad_medico.IdEspecialidadMedico
         inner join especialidad ON especialidad_medico.IdEspecialidad = especialidad.IdEspecialidad
         GROUP by especialidad.NombreEspecialidad");
+        //return $citas;
         return view('Admin.dashboard.citasXespecialidad',compact('citas'));
     }
 }

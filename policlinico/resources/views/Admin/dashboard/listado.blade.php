@@ -24,7 +24,7 @@
                     <p class="h3">Cantidad Total de citas regritradas</p>
                 </td>
                 <td>
-                    <a href="" class="btn btn-success">
+                    <a href="{{url('Admin/Dashboard/CitasRegistradas/')}}" class="btn btn-success">
                         Ver Reporte
                     </a>
                 </td>
