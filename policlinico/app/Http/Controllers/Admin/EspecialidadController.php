@@ -66,7 +66,7 @@ class EspecialidadController extends Controller
                 'Descripcion' => $datos['Descripcion']
             ]);
         }
-        return redirect('especialidad')->with('mensaje', 'Especialidad creada');
+        return redirect('Admin/especialidad')->with('mensaje', 'Especialidad creada');
     }
 
     /**

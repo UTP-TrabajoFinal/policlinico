@@ -26,14 +26,9 @@
             <div class="d-flex align-items-start" id="sub-menu">
                 <i class="bi bi-box-arrow-left p-2" id="icono"></i>
                 <h3>
-                    <a href="" class="d-block text-decoration-none" id="item">Medicos</a>
-                </h3>
-            </div>
-
-            <div class="d-flex align-items-start" id="sub-menu">
-                <i class="bi bi-box-arrow-left p-2" id="icono"></i>
-                <h3>
-                    <a href="" class="d-block text-decoration-none" id="item">Asignaciones</a>
+                    <a href="" class="d-block text-decoration-none" id="item">
+                        Medicos
+                    </a>
                 </h3>
             </div>
 
@@ -54,20 +49,6 @@
             <div class="d-flex align-items-start" id="sub-menu">
                 <i class="bi bi-box-arrow-left p-2" id="icono"></i>
                 <h3>
-                    <a href="" class="d-block text-decoration-none" id="item">Pacientes</a>
-                </h3>
-            </div>
-
-            <div class="d-flex align-items-start" id="sub-menu">
-                <i class="bi bi-box-arrow-left p-2" id="icono"></i>
-                <h3>
-                    <a href="" class="d-block text-decoration-none" id="item">Receta</a>
-                </h3>
-            </div>
-
-            <div class="d-flex align-items-start" id="sub-menu">
-                <i class="bi bi-box-arrow-left p-2" id="icono"></i>
-                <h3>
                     <a href="" class="d-block text-decoration-none" id="item">Medicamentos</a>
                 </h3>
             </div>
@@ -82,7 +63,7 @@
             <div class="d-flex align-items-start" id="sub-menu">
                 <i class="bi bi-box-arrow-left p-2" id="icono"></i>
                 <h3>
-                    <a href="" class="d-block text-decoration-none" id="item">Cita</a>
+                    <a href="{{url('Admin/Dashboard')}}" class="d-block text-decoration-none" id="item">DashBoard</a>
                 </h3>
             </div>
 

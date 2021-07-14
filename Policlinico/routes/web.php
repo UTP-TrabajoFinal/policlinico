@@ -13,6 +13,7 @@ Route::resource('admin', LogueoController::class);
 
 //Admin
 Route::resource('Admin/especialidad', App\Http\Controllers\Admin\EspecialidadController::class);
+Route::get('Admin/Dashboard', [App\Http\Controllers\Admin\DashboardController::class,'index']);
 
 //medico
 Route::resource('Medico/Registro', App\Http\Controllers\Medico\medicoController::class);

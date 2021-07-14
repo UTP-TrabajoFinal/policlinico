@@ -40,7 +40,7 @@
                         <img width="100px" src="{{ asset($item->foto)}}" alt="">
                     </td>
                     <td >
-                        <a href="{{ url('especialidad/'.$item->IdEspecialidad.'/edit') }}">
+                        <a href="{{ url('Admin/especialidad/'.$item->IdEspecialidad.'/edit') }}">
                             <button class="btn btn-secondary">
                                 <span>
                                     <i class="bi bi-pencil-fill"></i>
